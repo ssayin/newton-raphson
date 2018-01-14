@@ -1,19 +1,19 @@
 public class TestCase {
 	public TestCase(Function f) {
-		int[] coefs = new int[3];
-		// 2x^2 + 3x + 11
-		coefs[0] = 1;
-		coefs[1] = -2;
-		coefs[2] = -2;
-		Function fe = new Function(coefs);
 		NewtonRaphson nr = new NewtonRaphson();
-		System.out.println(fe.evaluate(2));
-		System.out.println(fe.evaluate(3));
-		System.out.println(nr.findRoot(fe, 3));
+		//System.out.println(f.evaluate(2));
+		//System.out.println(f.evaluate(3));
+		//System.out.println(nr.findRoot(f, 3));
+		for (int i = 0; i < f.getDegree(); ++i) {
+			System.out.println(f.getCoef(i));
+		}
 	}
 
 	public static void main(String[] args) {
-		TestCase t = new TestCase(new Function("2323"));
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		while (true) {
+			TestCase t = new TestCase(new Function(sc.next()));
+		}
 	}
 
 }
